@@ -26,11 +26,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 10,
     borderRadius: 20,
+    flex: 1,
+    maxWidth: '50%', // if list is uneven, the last item will not take the full width
   },
   image : {
     width: '100%',
     aspectRatio: 1, // aspectRatio combination with width: '100%' makes the image square
-    resizeMode: 'contain',
+    resizeMode: 'contain', // hole image will be shown
   },
   title: {
     fontSize: 18,

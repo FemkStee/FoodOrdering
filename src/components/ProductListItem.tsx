@@ -3,7 +3,7 @@ import Colors from '@/src/constants/Colors';
 import { Product } from '../types';
 import { Link } from 'expo-router';
 
-export const defaultImage = 'https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png';
+const defaultImage = 'https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png';
 
 type ProductListItemProps = {
     product: Product;

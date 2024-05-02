@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import Colors from '@/src/constants/Colors';
 import { Product } from '../types';
+import { Link } from 'expo-router';
 
 export const defaultImage = 'https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png';
 
@@ -10,12 +11,15 @@ type ProductListItemProps = {
 
 const ProductListItem = ({ product }: ProductListItemProps) => {
   return (
-    <View style={styles.container}>
-      {/* You have to use || operator to avoid null error */}
-      <Image source={{uri: product.image || defaultImage}} style={styles.image}/>
-      <Text style={styles.title}>{product.name}</Text>
-      <Text style={styles.price}>${product.price}</Text>
-    </View>
+    // asChild is used to pass the child component to the parent component
+    <Link href={`/menu/${product.id}`} asChild>
+      <Pressable style={styles.container}>
+        {/* You have to use || operator to avoid null error */}
+        <Image source={{uri: product.image || defaultImage}} style={styles.image}/>
+        <Text style={styles.title}>{product.name}</Text>
+        <Text style={styles.price}>${product.price}</Text>
+      </Pressable>
+    </Link>
   );
 }
 
